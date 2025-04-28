@@ -32,7 +32,7 @@ USAGE_STATS = {"analyze_sequences_calls": 0, "color_similarity_calls": 0}
 async def startup_event():
     global COLORS_DF, DOT_PRODUCTS, MAX_DOT_PRODUCT
     try:
-        COLORS_DF = pd.read_csv("/app/data/la_matrice_plus.csv")
+        COLORS_DF = pd.read_csv("/api/data/la_matrice_plus.csv")
         DOT_PRODUCTS, MAX_DOT_PRODUCT = precompute_dot_products(COLORS_DF)
         logger.info("Startup: Color data loaded and dot products computed.")
     except Exception as e:
